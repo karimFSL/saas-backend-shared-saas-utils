@@ -1,0 +1,58 @@
+# CORS
+autoconfig.security.cors.standalone=true
+autoconfig.security.cors.allow-credentials=true
+autoconfig.security.cors.allowed-origins[0]=https://example.com
+autoconfig.security.cors.allowed-origins[1]=https://api.example.com
+autoconfig.security.cors.allowed-headers[0]=Authorization
+autoconfig.security.cors.allowed-headers[1]=Content-Type
+autoconfig.security.cors.allowed-headers[2]=Accept
+autoconfig.security.cors.allowed-methods[0]=GET
+autoconfig.security.cors.allowed-methods[1]=POST
+autoconfig.security.cors.allowed-methods[2]=PUT
+autoconfig.security.cors.allowed-methods[3]=DELETE
+
+# Security white list
+autoconfig.security.security-white-list[0]=/public/**
+autoconfig.security.security-white-list[1]=/health
+autoconfig.security.security-white-list[2]=/docs/**
+
+# Rules
+autoconfig.security.rules[0].uris[0]=/api/admin/**
+autoconfig.security.rules[0].authorities[0]=ADMIN
+autoconfig.security.rules[0].roles[0]=ROLE_ADMIN
+
+autoconfig.security.rules[1].uris[0]=/api/user/**
+autoconfig.security.rules[1].authorities[0]=USER
+autoconfig.security.rules[1].roles[0]=ROLE_USER
+
+# Auth
+autoconfig.security.auth.auth-url=https://auth.example.com/oauth/token
+autoconfig.security.auth.client-id=my-client-id
+autoconfig.security.auth.client-secret=my-client-secret
+autoconfig.security.auth.audience[0]=https://api.example.com
+autoconfig.security.auth.audience[1]=https://services.example.com
+
+# CSP
+autoconfig.security.csp=default-src 'self'; script-src 'self' https://cdn.example.com
+
+# Custom Auth Props
+autoconfig.security.custom-auth-props.auth-url=https://custom-auth.example.com/login
+autoconfig.security.custom-auth-props.rules[0].method[0]=GET
+autoconfig.security.custom-auth-props.rules[0].path=/custom-api/data
+autoconfig.security.custom-auth-props.rules[1].method[0]=POST
+autoconfig.security.custom-auth-props.rules[1].path=/custom-api/submit
+
+# OpenAPI Props
+autoconfig.security.open-api-props.contact.email=support@example.com
+autoconfig.security.open-api-props.contact.name=API Support
+autoconfig.security.open-api-props.contact.url=https://example.com/contact
+autoconfig.security.open-api-props.contact.security-scheme-name=bearerAuth
+autoconfig.security.open-api-props.contact.authorization-url=https://auth.example.com/oauth/authorize
+autoconfig.security.open-api-props.contact.token-url=https://auth.example.com/oauth/token
+
+autoconfig.security.open-api-props.info.license.name=Apache 2.0
+autoconfig.security.open-api-props.info.license.url=https://www.apache.org/licenses/LICENSE-2.0.html
+autoconfig.security.open-api-props.info.description=Example API documentation
+autoconfig.security.open-api-props.info.title=Example API
+autoconfig.security.open-api-props.info.version=1.0.0
+autoconfig.security.open-api-props.info.terms-of-service-url=https://example.com/terms

@@ -1,0 +1,73 @@
+autoconfig:
+  security:
+    cors:
+      standalone: true
+      allowCredentials: true
+      allowedOrigins:
+        - "https://example.com"
+        - "https://api.example.com"
+      allowedHeaders:
+        - "Authorization"
+        - "Content-Type"
+        - "Accept"
+      allowedMethods:
+        - "GET"
+        - "POST"
+        - "PUT"
+        - "DELETE"
+
+    securityWhiteList:
+      - "/public/**"
+      - "/health"
+      - "/docs/**"
+
+    rules:
+      - uris:
+          - "/api/admin/**"
+        authorities:
+          - "ADMIN"
+        roles:
+          - "ROLE_ADMIN"
+      - uris:
+          - "/api/user/**"
+        authorities:
+          - "USER"
+        roles:
+          - "ROLE_USER"
+
+    auth:
+      authUrl: "https://auth.example.com/oauth/token"
+      clientId: "my-client-id"
+      clientSecret: "my-client-secret"
+      audience:
+        - "https://api.example.com"
+        - "https://services.example.com"
+
+    csp: "default-src 'self'; script-src 'self' https://cdn.example.com"
+
+    customAuthProps:
+      authUrl: "https://custom-auth.example.com/login"
+      rules:
+        - method:
+            - "GET"
+          path: "/custom-api/data"
+        - method:
+            - "POST"
+          path: "/custom-api/submit"
+
+    openAPIProps:
+      contact:
+        email: "support@example.com"
+        name: "API Support"
+        url: "https://example.com/contact"
+        securitySchemeName: "bearerAuth"
+        authorizationUrl: "https://auth.example.com/oauth/authorize"
+        tokenUrl: "https://auth.example.com/oauth/token"
+      info:
+        license:
+          name: "Apache 2.0"
+          url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+        description: "Example API documentation"
+        title: "Example API"
+        version: "1.0.0"
+        termsOfServiceUrl: "https://example.com/terms"
