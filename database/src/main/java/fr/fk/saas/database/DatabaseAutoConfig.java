@@ -1,6 +1,6 @@
 package fr.fk.saas.database;
 
-import fr.fk.saas.database.props.DatabaseAutoConfigProps;
+import fr.fk.saas.database.configuration.DatabaseAutoConfigProps;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;

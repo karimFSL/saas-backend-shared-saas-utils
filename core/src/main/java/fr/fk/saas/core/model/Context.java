@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-/**
- * @author Walid.BOUHADJI
- * @Created 27/06/2024
- */
+
 @AllArgsConstructor
 @Getter
 @Builder

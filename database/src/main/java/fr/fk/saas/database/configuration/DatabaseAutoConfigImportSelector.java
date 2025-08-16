@@ -1,7 +1,6 @@
 package fr.fk.saas.database.configuration;
 
 import fr.fk.saas.database.DatabaseAutoConfig;
-import fr.fk.saas.database.props.DatabaseAutoConfigProps;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
